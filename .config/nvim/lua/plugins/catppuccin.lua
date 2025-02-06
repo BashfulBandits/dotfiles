@@ -3,6 +3,7 @@ return {
   name = "catppuccin",
   priority = 1000,
   opts = {
-    -- configuration options...
+    flavour = "macchiato",         -- latte, frappe, macchiato, mocha
+    transparent_background = true, -- disables setting the background color.
   },
 }

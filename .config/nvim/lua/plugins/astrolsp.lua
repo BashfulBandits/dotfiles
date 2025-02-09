@@ -12,15 +12,15 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = false, -- enable/disable inlay hints on start
+      codelens = true,        -- enable/disable codelens refresh on start
+      inlay_hints = false,    -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = true,     -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -49,12 +49,14 @@ return {
           offsetEncoding = "utf-8"
         },
         cmd = {
-          'clangd',
+          --'clangd',
           --'--query-driver=/nix/store/',
         },
         filetypes = { "c", "cpp" },
-        root_dir = lspconfig.util.root_pattern("compile_commands.json", ".clangd"),
+        --root_dir = lspconfig.util.root_pattern("compile_commands.json", ".clangd"),
       },
+      rust_analyzer = {},
+      nil_ls = {},
     },
     -- customize how language servers are attached
     handlers = {

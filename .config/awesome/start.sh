@@ -10,7 +10,7 @@ xinput set-prop 'Glorious Model I' 298 0 &
 # monitor Res and Hz
 # change based on your monitor(s)
 xrandr --output DP-4 --mode 2560x1440 --rate 240 &
-xrandr --output DP-2 --mode 1920x1080 --rate 144 &
+xrandr --output DP-2 --mode 1920x1080 --rate 240 &
 
 # start tablet driver
 otd-daemon &

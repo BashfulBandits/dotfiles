@@ -19,6 +19,6 @@ otd-daemon &
 nm-applet --indicator &
 
 # turn off auto sleep
-xset s off &
+#xset s off &
 xset -dpms &
-xset s noblank &
+#xset s noblank &

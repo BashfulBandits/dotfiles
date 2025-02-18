@@ -22,8 +22,8 @@ return {
 	opts = {
 		-- Configuration table of features provided by AstroLSP
 		features = {
-			codelens = true, -- enable/disable codelens refresh on start
-			inlay_hints = true, -- enable/disable inlay hints on start
+			codelens = true,     -- enable/disable codelens refresh on start
+			inlay_hints = true,  -- enable/disable inlay hints on start
 			semantic_tokens = true, -- enable/disable semantic token highlighting
 		},
 		-- customize lsp formatting options
@@ -78,6 +78,15 @@ return {
 			--},
 			--},
 			nil_ls = {},
+			emmet_language_server = {
+				filetypes = { "html", "css", "svelte", "js", "ts" },
+			},
+			tailwindcss = {
+				filetypes = { "html", "css", "svelte", "js", "ts" },
+			},
+			vtsls = {
+				--filetypes = { "html", "css", "svelte", "js", "ts" },
+			},
 		},
 		-- customize how language servers are attached
 		handlers = {
@@ -130,7 +139,7 @@ return {
 					desc = "Toggle LSP semantic highlight (buffer)",
 					cond = function(client)
 						return client.supports_method("textDocument/semanticTokens/full")
-							and vim.lsp.semantic_tokens ~= nil
+								and vim.lsp.semantic_tokens ~= nil
 					end,
 				},
 			},

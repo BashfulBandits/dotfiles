@@ -49,7 +49,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/bash/.config/awesome/theme.lua")
+beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -60,7 +60,7 @@ editor_cmd = terminal .. " -e " .. editor
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
+-- However, you can use another modifier like, but it may interact with others.
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -583,7 +583,65 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
--- }}}
+
+local function setup_movement_remapping()
+    -- Function to apply all key mappings
+    local function remap_war_to_arrows()
+        awful.spawn.easy_async_with_shell(
+            [[bash -c '
+                # Save original mappings
+                xmodmap -pke > ~/.original_keymaps
+                
+                # Remap WAR to arrows
+                xmodmap -e "keycode $(xmodmap -pke | grep \'W\' | cut -d \'=\' -f2) = Up"
+                xmodmap -e "keycode $(xmodmap -pke | grep \'A\' | cut -d \'=\'' | cut -d \' \' -f2) = Left"
+                xmodmap -e "keycode $(xmodmap -pke | grep \'R\' | cut -d \'=\'' | cut -d \' \' -f2) = Down"
+                xmodmap -e "keycode $(xmodmap -pke | grep \'S\' | cut -d \'=\'' | cut -d \' \' -f2) = Right"
+                
+                # Show notification
+                notify-send "WAR Keys Remapped!" "W=↑, A=←, R=→"
+            ']]
+        )
+    end
+    
+    -- Function to restore original mappings
+    local function restore_original_mappings()
+        awful.spawn.easy_async_with_shell(
+            [[bash -c '
+                # Restore original mappings
+                xmodmap ~/.original_keymaps
+                
+                # Clean up backup file
+                rm ~/.original_keymaps
+                
+                # Show notification
+                notify-send "Keys Restored!" "Original key mappings restored"
+            ']]
+        )
+    end
+    
+    -- Helper function to check if remapping is active
+    local function is_remapping_active()
+        local pid = io.popen("pgrep -f 'xmodmap.*Up'")
+        return pid:read("*l") ~= nil
+    end
+    
+    -- Key binding to toggle WAR to arrow mapping
+    awful.key({ modkey, "Shift" }, "w",
+        function()
+            if is_remapping_active() then
+                restore_original_mappings()
+            else
+                remap_war_to_arrows()
+            end
+        end,
+        {description = "Toggle WAR to arrow keys mapping"}
+    )
+end
+
+-- Call the setup function
+setup_movement_remapping()
 
 -- startup script
-awful.spawn.with_shell("/home/bash/dotfiles/.config/awesome/start.sh")
+awful.spawn.with_shell("~/dotfiles/.config/awesome/start.sh")
+

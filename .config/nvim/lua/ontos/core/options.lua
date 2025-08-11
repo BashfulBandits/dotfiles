@@ -9,4 +9,4 @@ vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a T
 vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 
-vim.lsp.inlay_hint.enable = true
+vim.lsp.inlay_hint.enable(true) 

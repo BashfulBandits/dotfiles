@@ -6,7 +6,12 @@ return {
 
   config = function(_, opts)
     require'nvim-treesitter.configs'.setup {
-    ensure_installed = { "lua", "rust" },
+    ensure_installed = {
+      "lua",
+      "rust",
+      "c",
+      "html", "css", "typescript", "svelte",
+    },
 
     auto_install = false,
     highlight = {

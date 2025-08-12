@@ -10,6 +10,14 @@ return {
       update_in_insert = true,
     })
 
-    vim.lsp.enable('lua_ls')
+    vim.lsp.enable('lua_ls') --working
+
+    vim.lsp.enable('markdown_oxide')
+
+    vim.lsp.enable('emmet_language_server') --working
+    vim.lsp.enable('cssls')
+    vim.lsp.enable('tailwindcss') --working(needs tailwindcss installed in project)
+    vim.lsp.enable('ts_ls')
+    vim.lsp.enable('svls')
   end,
 }

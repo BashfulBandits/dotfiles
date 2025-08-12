@@ -1,3 +1,9 @@
+-- Set minimum width for sign column
+vim.opt.signcolumn = 'yes:1'
+
+vim.opt.conceallevel = 2
+
+-- Sets the Paste command in normal mode to use the system clipboard
 vim.opt.clipboard = "unnamedplus"
 
 -- Enable hybrid line numbers

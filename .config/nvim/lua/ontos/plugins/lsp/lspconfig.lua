@@ -19,5 +19,9 @@ return {
     vim.lsp.enable('tailwindcss') --working(needs tailwindcss installed in project)
     vim.lsp.enable('ts_ls')
     vim.lsp.enable('svls')
+
+    vim.lsp.enable('clangd')
+
+    vim.lsp.enable('pyright')
   end,
 }

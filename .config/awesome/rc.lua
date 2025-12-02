@@ -336,6 +336,10 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() awful.util.spawn("rofi -show run") end,
         { description = "launch rofi in run mode", group = "launcher" }),
+
+    -- Screenshot
+    awful.key({ modkey }, "u", function() awful.util.spawn("coreshot -w") end,
+        { description = "launch rofi in run mode", group = "launcher" }),
     --awful.key({ modkey }, "p", function() menubar.show() end,
     --          {description = "show the menubar", group = "launcher"}),
 

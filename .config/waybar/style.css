@@ -9,10 +9,36 @@
 }
 
 window#waybar {
-    background: @background;
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background: rgba(0, 0, 0, 0);
     color: @primary;
 }
+
+.modules-left {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    background: @background;
+    color: @primary;
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
+
+.modules-center {
+    margin-top: 0.5rem;
+    background: @background;
+    color: @primary;
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
+
+.modules-right {
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    background: @background;
+    color: @primary;
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
+
 
 tooltip {
     background: rgba(43, 48, 59, 0.5);
@@ -22,20 +48,25 @@ tooltip label {
     color: @primary;
 }
 
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
 #workspaces button {
     padding: 0 5px;
     background: transparent;
+    border-radius: 0.5rem;
     color: @primary;
-    border-bottom: 3px solid transparent;
 }
 
-#workspaces button.focused {
-    background: #64727D;
-    border-bottom: 3px solid @primary;
+#workspaces button.active {
+    background: @primary_container;
 }
 
 #mode, #clock, #battery {
-    padding: 0 10px;
+    padding: 0 6px;
+    border-radius: 0.5rem;
 }
 
 #mode {
@@ -44,7 +75,7 @@ tooltip label {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: @primary_container;
 }
 
 #battery {
@@ -72,4 +103,9 @@ tooltip label {
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#custom-power-button {
+    margin-left: 4px;
+    margin-right: 6px;
 }

@@ -1,8 +1,17 @@
 {
     "layer": "top",
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["clock", "network"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/window"],
+    "modules-right": ["tray", "clock", "custom/power-button"],
+
+    "custom/power-button": {
+        "on-click": "fuzzel",
+        "format": "{icon}",
+        "format-icons": {
+            "default": ""
+        }
+    },
+
     "hyprland/workspaces": {
         "all-outputs": true,
         "persistent-workspaces": {

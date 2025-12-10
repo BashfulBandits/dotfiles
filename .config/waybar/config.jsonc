@@ -5,7 +5,7 @@
     "modules-right": ["tray", "clock", "custom/power-button"],
 
     "custom/power-button": {
-        "on-click": "fuzzel",
+        "on-click": "$HOME/.config/fuzzel/power-menu/power-menu.sh",
         "format": "{icon}",
         "format-icons": {
             "default": ""

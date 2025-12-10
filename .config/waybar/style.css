@@ -19,7 +19,7 @@ window#waybar {
     background: @background;
     color: @primary;
     padding: 0.5rem;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 .modules-center {
@@ -27,7 +27,7 @@ window#waybar {
     background: @background;
     color: @primary;
     padding: 0.5rem;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 .modules-right {
@@ -36,7 +36,7 @@ window#waybar {
     background: @background;
     color: @primary;
     padding: 0.5rem;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 
@@ -76,6 +76,7 @@ tooltip label {
 
 #clock {
     background-color: @primary_container;
+    margin-left: 2px;
 }
 
 #battery {

@@ -1,20 +1,16 @@
 #!/usr/bin/env
 
-SELECTION="$(printf "1 - Lock\n2 - Suspend\n3 - Log out\n4 - Reboot\n5 - Reboot to UEFI\n6 - Hard reboot\n7 - Shutdown" | fuzzel --dmenu -l 7 -p "Power Menu: ")"
+SELECTION="$(printf "󰒲 - Suspend\n - Log out\n - Reboot\n - Reboot to UEFI\n - Shutdown" | fuzzel --config="$HOME/.config/fuzzel/power-menu/power-menu.ini" --dmenu)"
 
 case $SELECTION in
-	*"Lock")
-		echo Hello;;
 	*"Suspend")
-		echo Hello;;
+                systemctl suspend;;
 	*"Log out")
-		echo Hello;;
+                hyprctl dispatch exit;;
 	*"Reboot")
-		echo Hello;;
+                systemctl reboot;;
 	*"Reboot to UEFI")
-		echo Hello;;
-	*"Hard reboot")
-		echo Hello;;
+                systemctl reboot --firmware-setup;;
 	*"Shutdown")
-		echo Hello shut;;
+                systemctl shutdown;;
 esac

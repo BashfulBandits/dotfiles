@@ -2,14 +2,29 @@
     "layer": "top",
     "modules-center": ["hyprland/workspaces"],
     "modules-left": ["hyprland/window"],
-    "modules-right": ["tray", "clock", "custom/power-button"],
+    "modules-right": ["group/system-tray", "group/system-buttons"],
 
     "custom/power-button": {
-        "on-click": "$HOME/.config/fuzzel/power-menu/power-menu.sh",
+        "on-click": "bash \"$HOME/.config/fuzzel/power-menu/power-menu.sh\"",
         "format": "{icon}",
         "format-icons": {
             "default": ""
         }
+    },
+
+    "group/system-buttons": {
+        "orientation": "horizontal",
+        "modules": [
+            "clock",
+            "custom/power-button"
+        ]
+    },
+
+    "group/system-tray": {
+        "orientation": "horizontal",
+        "modules": [
+            "tray"
+        ]
     },
 
     "hyprland/workspaces": {

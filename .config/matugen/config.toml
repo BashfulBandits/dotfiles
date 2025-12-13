@@ -57,3 +57,12 @@ output_path = '~/.config/yazi/theme.toml'
 [templates.starship]
 input_path = './templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
+
+[templates.ags]
+input_path = './templates/colors.css'
+output_path = '~/.config/widgets/colors.css'
+
+[templates.mako]
+input_path = './templates/mako'
+output_path = '~/.config/mako/mako-colors'
+post_hook = 'makoctl reload'

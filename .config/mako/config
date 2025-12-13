@@ -1,0 +1,8 @@
+max-history=10
+
+anchor=top-left
+
+default-timeout=30000
+ignore-timeout=1
+
+include=~/.config/mako/mako-colors

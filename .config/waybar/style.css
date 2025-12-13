@@ -13,32 +13,26 @@ window#waybar {
     color: @primary;
 }
 
-.modules-left {
-    margin-left: 0.5rem;
-    margin-top: 0.5rem;
+.modules-center,
+#system-buttons,
+#clock,
+#system-logo,
+#system-tray,
+#notifications {
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+    margin-top: 0.75rem;
     background: @background;
     color: @primary;
     padding: 0.5rem;
     border-radius: 1.5rem;
 }
 
-.modules-center {
-    margin-top: 0.5rem;
-    background: @background;
-    color: @primary;
-    padding: 0.5rem;
-    border-radius: 1.5rem;
+#system-settings {
+    background-color: @primary_container;
+    padding: 0 6px;
+    border-radius: 0.5rem;
 }
-
-.modules-right {
-    margin-right: 0.5rem;
-    margin-top: 0.5rem;
-    background: @background;
-    color: @primary;
-    padding: 0.5rem;
-    border-radius: 1.5rem;
-}
-
 
 tooltip {
     background: rgba(43, 48, 59, 0.5);
@@ -76,7 +70,6 @@ tooltip label {
 
 #clock {
     background-color: @primary_container;
-    margin-left: 2px;
 }
 
 #battery {
@@ -107,6 +100,14 @@ tooltip label {
 }
 
 #custom-power-button {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+#custom-sound-menu,
+#custom-wifi-menu,
+#custom-alerts,
+#custom-system-logo {
     margin-left: 4px;
     margin-right: 6px;
 }

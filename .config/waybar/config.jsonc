@@ -1,8 +1,8 @@
 {
     "layer": "top",
+    "modules-left": ["group/system-logo", "group/system-tray", "group/notifications"],
     "modules-center": ["hyprland/workspaces"],
-    "modules-left": ["hyprland/window"],
-    "modules-right": ["group/system-tray", "group/system-buttons"],
+    "modules-right": ["clock", "group/system-buttons"],
 
     "custom/power-button": {
         "on-click": "bash \"$HOME/.config/fuzzel/power-menu/power-menu.sh\"",
@@ -12,18 +12,74 @@
         }
     },
 
+    "custom/wifi-menu": {
+        "on-click": "bash \"$HOME/.config/fuzzel/power-menu/power-menu.sh\"",
+        "format": "{icon}",
+        "format-icons": {
+            "default": ""
+        }
+    },
+
+    "custom/sound-menu": {
+        "on-click": "bash \"$HOME/.config/fuzzel/power-menu/power-menu.sh\"",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "󰕾"
+        }
+    },
+
+    "custom/system-logo": {
+        "on-click": "fuzzel",
+        "format": "{icon}",
+        "format-icons": {
+            "default": "󰄛"
+        }
+    },
+ 
+    "custom/notifications": {
+        "on-click": "bash \"$HOME/.config/scripts/waybar/notification-menu.sh\"",
+        "format": "{icon}",
+        "format-icons": {
+            "default": ""
+        }
+    },
+
+
     "group/system-buttons": {
         "orientation": "horizontal",
         "modules": [
-            "clock",
+            "group/system-settings",
             "custom/power-button"
         ]
     },
+
+    "group/system-settings": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/sound-menu",
+            "custom/wifi-menu"
+        ]
+    },
+
 
     "group/system-tray": {
         "orientation": "horizontal",
         "modules": [
             "tray"
+        ]
+    },
+
+    "group/system-logo": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/system-logo"
+        ]
+    },
+
+    "group/notifications": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/notifications"
         ]
     },
 
@@ -62,6 +118,6 @@
     },
 
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format-alt": "{:%b: %d-%a | %H:%M}"
     }
 }

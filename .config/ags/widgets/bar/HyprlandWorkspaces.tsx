@@ -1,6 +1,6 @@
-import Hyprland from "gi://AstalHyprland";
+import AstalHyprland from "gi://AstalHyprland";
 import { execAsync } from "ags/process"
-import { Accessor, createBinding, createState } from "ags"
+import { Accessor, createBinding, createState, For } from "ags"
 
 import options from "../options";
 import { range } from "../utils";
@@ -23,32 +23,34 @@ const get_focused_workspace = (hyprland, workspaces: number) => {
 
 
 export default function HyprlandWorkspaces() {
-  const hyprland = Hyprland.get_default()
+  const hypr = AstalHyprland.get_default()
+  const [wsList, setWsList] = createState(hypr.get_workspaces())
 
-  let activeWorkspaceId: Accessor<Hyprland.Workspace> = createBinding(hyprland, "get_focused_workspace")
-  let workspaces: number = options.workspaces.amount;
-
-  activeWorkspaceId.subscribe(() => {
-    console.log("value of accessor changed to", activeWorkspaceId)
+  // INFO: https://github.com/Aylur/astal/issues/284
+  hypr.connect("workspace-added", (_: any, ws: AstalHyprland.Workspace) => {
+    setWsList((w: AstalHyprland.Workspace) => [...w, ws])
+  })
+  hypr.connect("workspace-removed", (_, wsId) => {
+    setWsList((w) => w.filter((w) => w.id != wsId))
   })
 
-  print(activeWorkspaceId.get_id())
+  const sorted = (arr: Array<AstalHyprland.Workspace>) => {
+    return arr.filter(ws => !(ws.id >= -99 && ws.id <= -2)).sort((a, b) => a.id - b.id)
+  }
 
-  return (
-  <box class="workspaces-root-box">
-    {range(workspaces).map((workspace) => {
-        let focused_workspace = get_focused_workspace(hyprland, workspaces);
-        const workspaceIsActive = workspace === focused_workspace;
-        return (
+    //<For each={wsList(sorted)}>
+          //onClicked={() => ws.focus()}
+  let workspace_array = range(options.workspaces.amount);
+  return <box class="Workspaces">
+    <For each={workspace_array}>
+        {(ws: number) => (
         <button
-          class={workspaceIsActive ? "active-hyprland-workspace-button" : "inactive-hyprland-workspace-button"}
-          onClicked={() => dispatch(hyprland, workspace)}>
-            {
-              workspace
-            }
+          class={createBinding(hypr, "focusedWorkspace").as(fw => ws === fw ? "focused" : "")}
+          onClicked={() => dispatch(hypr, ws)}
+        >
+          {ws}
         </button>
-        )
-    })}
+      )}
+    </For>
   </box>
-  )
 }

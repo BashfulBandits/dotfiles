@@ -12,5 +12,5 @@ case $SELECTION in
 	*"Reboot to UEFI")
                 systemctl reboot --firmware-setup;;
 	*"Shutdown")
-                systemctl shutdown;;
+                shutdown now --p;;
 esac

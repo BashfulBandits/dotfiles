@@ -1,0 +1,16 @@
+@use "./widgets/bar/bar.scss";
+
+window.Bar {
+  background: transparent;
+  font-weight: bold;
+
+  > centerbox {
+    border-radius: 10px;
+    margin: 8px;
+  }
+
+  button {
+    border-radius: 8px;
+    margin: 2px;
+  }
+}

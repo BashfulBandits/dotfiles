@@ -1,1 +1,33 @@
 @use "./hyprlandWorkspaces.scss";
+@use "../../colors.scss" as *;
+
+.Bar {
+  margin-top: .75rem;
+}
+
+button {
+  all: unset;
+  border-radius: .5rem;
+
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.LogoBox,
+.TrayBox,
+.NotificationBox,
+.WorkspacesBox,
+.CalendarBox,
+.Power-Settings-Box
+{
+  background: $background;
+  border-radius: 1rem;
+
+  padding: 8px;
+
+  margin-left: .75rem;
+  margin-right: .75rem;
+}
+

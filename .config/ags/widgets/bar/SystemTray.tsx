@@ -11,7 +11,7 @@ function tray() {
 export default function SystemTray() {
 
   return (
-    <box>
+    <box class="TrayBox">
       <button onClicked={() => tray()}>This is the tray</button>      
     </box>       
   )

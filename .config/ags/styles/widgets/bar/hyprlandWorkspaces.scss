@@ -1,6 +1,15 @@
+@use "../../colors.scss" as *;
 
-.active-hyprland-workspace-button {color: red;}
+.focused,
+.inactive {
+  background: none;
+  border: none;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 
-.inactive-hyprland-workspace-button {color: blue;}
-
-.focused {color: red;}
+.focused {
+  background: $primary_container;
+}

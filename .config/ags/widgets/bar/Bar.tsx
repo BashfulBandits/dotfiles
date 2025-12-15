@@ -37,7 +37,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
       </box>
       <box $type="end">
         <CalendarButton />
-        <box>
+        <box class="Power-Settings-Box">
           <SettingsButton />
           <PowerButton />
         </box>

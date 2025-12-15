@@ -1,6 +1,8 @@
 
 export default function NotificationButton() {
   return (
-    <button>This is the NotificationButton</button>   
+    <box class="NotificationBox">
+      <button>This is the NotificationButton</button>   
+    </box>
   )
 }

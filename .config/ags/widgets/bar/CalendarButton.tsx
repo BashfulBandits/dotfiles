@@ -2,7 +2,7 @@ import { Gtk } from "ags/gtk4"
 import { createPoll } from "ags/time"
 
 export default function CalendarButton() {
-  const time = createPoll("", 1000, 'date "+%a %m/%d %H:%M"')
+  const time = createPoll("", 1000, 'date "+%a %m/%d %H:%M:%S"')
 
     return (
       <box class="CalendarBox">

@@ -15,6 +15,10 @@ button {
   padding-left: 8px;
 }
 
+.IconLabel {
+  font-size: 14pt;
+}
+
 .LogoBox,
 .TrayBox,
 .NotificationBox,
@@ -23,7 +27,7 @@ button {
 .Power-Settings-Box
 {
   background: $background;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
 
   padding: 8px;
 
@@ -31,3 +35,26 @@ button {
   margin-right: .75rem;
 }
 
+.BarSettingsBox {
+  background: $primary_container;
+  border-radius: 1rem;
+}
+
+.BarSettingsLabelBox label {
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.BarSettingsBox .BlueToothLabel {
+  margin-left: 6px;
+  margin-right: 1px;
+  font-size: 12pt;
+}
+
+.HeadphoneLabel {
+  margin-left: -76px;
+}
+
+.PowerIconLabel {
+  font-size: 12pt;
+}

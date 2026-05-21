@@ -1,8 +1,12 @@
+import NotificationMenu from "../notificationMenu/NotifiationMenu";
 
 export default function NotificationButton() {
   return (
     <box class="NotificationBox">
-      <button>This is the NotificationButton</button>   
+        <menubutton>
+          <label label="󰂜" class="IconLabel"/>
+          <popover></popover>
+        </menubutton>
     </box>
   )
 }

@@ -2,6 +2,8 @@
 @use "./colors.scss" as *;
 
 * {
+  all: unset;
   color: $primary;
   font-size: 10pt;
+  font-family: 'Hack Nerd Font';
 }

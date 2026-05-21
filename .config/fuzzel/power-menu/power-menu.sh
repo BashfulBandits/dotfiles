@@ -8,7 +8,7 @@ case $SELECTION in
 	*"Log out")
                 hyprctl dispatch exit;;
 	*"Reboot")
-                systemctl reboot;;
+                shutdown now --r;;
 	*"Reboot to UEFI")
                 systemctl reboot --firmware-setup;;
 	*"Shutdown")

@@ -2,4 +2,4 @@
 
 WALLPAPER_PATH=$(ls ~/WallPapers/ | fuzzel -d)
 
-matugen image ~/WallPapers/$WALLPAPER_PATH
+matugen image ~/WallPapers/$WALLPAPER_PATH --source-color-index 0

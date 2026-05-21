@@ -1,10 +1,15 @@
-import Tray from "gi://AstalTray";
+import AstalTray from "gi://AstalTray";
 
 function tray() {
-  const tray = Tray.get_default()
+  const tray = AstalTray.get_default()
 
   for (const item of tray.get_items()) {
     print(item.title)
+    print(item.menu_path)
+    print("\n")
+    if (item.title === "Network") {
+        //print(item.title)
+    }
   }
 }
 

@@ -66,3 +66,8 @@ post_hook = 'makoctl reload'
 [templates.ags]
 input_path = './templates/ags.scss'
 output_path = '~/.config/ags/styles/colors.scss'
+post_hook = 'ags quit & hyprctl dispatch exec ~/.config/ags/app.ts'
+
+[templates.obsidian]
+input_path = './templates/obsidian.css'
+output_path = '~/obsidian/.obsidian/snippets/matugen.css'

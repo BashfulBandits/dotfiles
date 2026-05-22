@@ -2,15 +2,15 @@ import app from "ags/gtk4/app"
 import { Astal, Gtk, Gdk } from "ags/gtk4"
 import { execAsync } from "ags/process"
 
-import LogoButton from "./LogoButton";
-import SystemTray from "./SystemTray";
-import NotificationButton from "./NotificationButton";
+import LogoButton from "./left/LogoButton";
+import SystemTray from "./left/SystemTray";
+import NotificationButton from "./left/NotificationButton";
 
-import HyprlandWorkspaces from "./HyprlandWorkspaces";
+import HyprlandWorkspaces from "./center/HyprlandWorkspaces";
 
-import CalendarButton from "./CalendarButton";
-import SettingsButton from "./SettingsButton";
-import PowerButton from "./PowerButton";
+import CalendarButton from "./right/CalendarButton";
+import SettingsButton from "./right/SettingsButton";
+import PowerButton from "./right/PowerButton";
 
 
 export default function Bar(gdkmonitor: Gdk.Monitor) {

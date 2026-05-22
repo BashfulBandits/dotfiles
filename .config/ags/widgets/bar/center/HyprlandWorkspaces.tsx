@@ -2,8 +2,8 @@ import AstalHyprland from "gi://AstalHyprland";
 import { execAsync } from "ags/process"
 import { Accessor, createBinding } from "ags"
 
-import options from "../options";
-import { range } from "../utils";
+import options from "../../options";
+import { range } from "../../utils";
 
 
 const dispatch = (hyprland, workspaceNumber: number) => {
